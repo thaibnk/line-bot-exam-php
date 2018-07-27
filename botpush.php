@@ -12,14 +12,15 @@ $channelSecret =  '5ee439e1f6308d8a4a660f944c2ce8e5';
 
 
 $pushID ='Ua53c53af718115e3453b75a6a564a761'; 
-  
+  $userIds = array('Ua53c53af718115e3453b75a6a564a761','U1abe44912e42cc30622b90c918c304c5');
   //'U7ef7a449f2a5c2057eacfc02ba2eb286';
 
 $httpClient = new \LINE\LINEBot\HTTPClient\CurlHTTPClient($access_token);
 $bot = new \LINE\LINEBot($httpClient, ['channelSecret' => $channelSecret]);
 
 $textMessageBuilder = new \LINE\LINEBot\MessageBuilder\TextMessageBuilder('สวัสดีจ๊ะhello world1');
-$response = $bot->pushMessage($pushID, $textMessageBuilder);
+//$response = $bot->pushMessage($pushID, $textMessageBuilder);
+$response = $bot->multicast($userIds,$textMessageBuilder);
 
 echo $response->getHTTPStatus() . ' ' . $response->getRawBody();
 ?>
