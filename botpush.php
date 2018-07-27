@@ -19,8 +19,11 @@ $pushID ='Ua53c53af718115e3453b75a6a564a761';
 
 $httpClient = new \LINE\LINEBot\HTTPClient\CurlHTTPClient($access_token);
 $bot = new \LINE\LINEBot($httpClient, ['channelSecret' => $channelSecret]);
-
-$textMessageBuilder = new \LINE\LINEBot\MessageBuilder\TextMessageBuilder('สวัสดีจ๊ะ Good '.date('A'));
+if ("PM"==date('A')
+$textMessageBuilder = new \LINE\LINEBot\MessageBuilder\TextMessageBuilder('สวัสดีจ๊ะ Good after nook');
+    else
+    
+$textMessageBuilder = new \LINE\LINEBot\MessageBuilder\TextMessageBuilder('สวัสดีจ๊ะ Good morning');
 //$response = $bot->pushMessage($pushID, $textMessageBuilder);
 $response = $bot->multicast($userIds,$textMessageBuilder);
 
