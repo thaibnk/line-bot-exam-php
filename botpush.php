@@ -24,8 +24,8 @@ $bot = new \LINE\LINEBot($httpClient, ['channelSecret' => $channelSecret]);
  //   else
     
 $textMessageBuilder = new \LINE\LINEBot\MessageBuilder\TextMessageBuilder('สวัสดีจ๊ะHello');
-//$response = $bot->pushMessage($pushID, $textMessageBuilder);
-$response = $bot->multicast($userIds,$textMessageBuilder);
+$response = $bot->pushMessage($pushID, $textMessageBuilder);
+//$response = $bot->multicast($userIds,$textMessageBuilder);
 
 echo $response->getHTTPStatus() . ' ' . $response->getRawBody();
 ?>
