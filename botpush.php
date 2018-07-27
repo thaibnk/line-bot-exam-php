@@ -47,7 +47,7 @@ $channelSecret =  '5ee439e1f6308d8a4a660f944c2ce8e5';
 
 $pushID ='Ua53c53af718115e3453b75a6a564a761'; 
   $userIds = array('Ua53c53af718115e3453b75a6a564a761','U1abe44912e42cc30622b90c918c304c5','U3b8aee0375cf0918063385e5d1b88dfa',
-                  'U188d6da54382f7bfa79551a5ec70d9','U039d1e9327f1121f2e8ead2c852d0fd7');
+                  'U188d6da54382f7bfa79551a5ec70d95e','U039d1e9327f1121f2e8ead2c852d0fd7');
 
 //s3 761 ,y7 4c5, j1mini 88dfa,note4   0d9   , s4 fd7
   //U1abe44912e42cc30622b90c918c304c5');
