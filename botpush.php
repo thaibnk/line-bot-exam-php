@@ -46,8 +46,8 @@ $channelSecret =  '5ee439e1f6308d8a4a660f944c2ce8e5';
 
 
 $pushID ='Ua53c53af718115e3453b75a6a564a761'; 
-  $userIds = array('Ua53c53af718115e3453b75a6a564a761','U1abe44912e42cc30622b90c918c304c5','U3b8aee0375cf0918063385e5d1b88dfa',
-                  'U188d6da54382f7bfa79551a5ec70d95e','U039d1e9327f1121f2e8ead2c852d0fd7');
+  $userIds = array('Ua53c53af718115e3453b75a6a564a761','U1abe44912e42cc30622b90c918c304c5');
+    //               ,'U3b8aee0375cf0918063385e5d1b88dfa','U188d6da54382f7bfa79551a5ec70d95e','U039d1e9327f1121f2e8ead2c852d0fd7');
 
 //s3 761 ,y7 4c5, j1mini 88dfa,note4   0d9   , s4 fd7
   //U1abe44912e42cc30622b90c918c304c5');
@@ -58,7 +58,29 @@ $bot = new \LINE\LINEBot($httpClient, ['channelSecret' => $channelSecret]);
     
 $textMessageBuilder = new \LINE\LINEBot\MessageBuilder\TextMessageBuilder('สวัสดีจ๊ะ ร้านอาหารแนะนำวันนี้  CoffeeD  อร่อยดี ');
 //$response = $bot->pushMessage($pushID, $textMessageBuilder);
-$response = $bot->multicast($userIds,$textMessageBuilder);
+
+ $arr_replyData = array();
+    $textReplyMessage = "Bot ตอบกลับคุณเป็นข้อความ";
+    $arr_replyData[] = new TextMessageBuilder($textReplyMessage);
+                     
+    $picFullSize = 'https://7698d940-a-62cb3a1a-s-sites.googlegroups.com/site/cosmocoffeed/nxng-khim/small_kim.png?attachauth=ANoY7crDxPRKu11N2TE5WLTL4XxsBPfa_V03kxBHijnv9ER8s6-JKHFPru7U0Xgb8Lsu5FHcJCq2GF7mfGSeGp5mhv76e3YXAjfbEY7km3ByK716ZoYZoGyK70TSS62-7JnGjxKaUG1ft1If7EbQ9DYUUw8jW8IQLuY4BgbDoy7WYGghopyI1QyTiJiFWNRqAcmXTnxLMfxRM7pHMLQqnjA1kRplF429S5WE7DjPd1i-NRcWH51sUQc%3D&attredirects=0';
+    $picThumbnail = 'https://7698d940-a-62cb3a1a-s-sites.googlegroups.com/site/cosmocoffeed/nxng-khim/small_kim.jpg?attachauth=ANoY7crHesQ4PuLmAMJPYfML73Dhhs0L_AR3_-yG-m08lR3TObYSbKwsEURzWKIDZ9_LPKegApyab3TT-k0jx88AIU4lIuck2LaEk_xweNAujRfH8E4HYB_Cw8Y0FleSef9FKwZg1aA94bulqOG3Z9I2TAE7wXom6v1-M9lazvgqxaPESUEClDx5KZJop7QzqZI4l3F-jc7Jp-jc6gTarRrs8jJ-I1rsCJkQgqqiBtMfJcKTUI5scCw%3D&attredirects=0';
+    $arr_replyData[] = new ImageMessageBuilder($picFullSize,$picThumbnail);
+                     
+    $placeName = "ที่ตั้งร้าน อร่อยดี coffeed cosmo เมืองทองธานี ";
+    $placeAddress = "ต.บางพูด อ.ปากเกร็ด จ.นนทบุรี ประเทศไทย";
+    $latitude = 13.780401863217657;
+    $longitude = 100.61141967773438;
+    $arr_replyData[] = new LocationMessageBuilder($placeName, $placeAddress, $latitude ,$longitude);        
+ 
+    $multiMessage =     new MultiMessageBuilder;
+    foreach($arr_replyData as $arr_Reply){
+            $multiMessage->add($arr_Reply);
+    }
+    $replyData = $multiMessage;            
+
+//$response = $bot->multicast($userIds,$textMessageBuilder);
+$response = $bot->multicast($userIds,$replyData);
 
 echo $response->getHTTPStatus() . ' ' . $response->getRawBody();
 ?>
