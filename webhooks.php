@@ -56,6 +56,29 @@ if (!is_null($events['events'])) {
 			// Get replyToken
 			$replyToken = $event['replyToken'];
 
+			
+ $
+arr_replyData = array();
+    $textReplyMessage = "ระบบ AI ตอบกลับคุณเป็นข้อความ";
+    $arr_replyData[] = new TextMessageBuilder($textReplyMessage);
+                     
+    $picFullSize = 'https://7698d940-a-62cb3a1a-s-sites.googlegroups.com/site/cosmocoffeed/nxng-khim/small_kim.png?attachauth=ANoY7crDxPRKu11N2TE5WLTL4XxsBPfa_V03kxBHijnv9ER8s6-JKHFPru7U0Xgb8Lsu5FHcJCq2GF7mfGSeGp5mhv76e3YXAjfbEY7km3ByK716ZoYZoGyK70TSS62-7JnGjxKaUG1ft1If7EbQ9DYUUw8jW8IQLuY4BgbDoy7WYGghopyI1QyTiJiFWNRqAcmXTnxLMfxRM7pHMLQqnjA1kRplF429S5WE7DjPd1i-NRcWH51sUQc%3D&attredirects=0';
+    $picThumbnail = 'https://7698d940-a-62cb3a1a-s-sites.googlegroups.com/site/cosmocoffeed/nxng-khim/small_kim.jpg?attachauth=ANoY7crHesQ4PuLmAMJPYfML73Dhhs0L_AR3_-yG-m08lR3TObYSbKwsEURzWKIDZ9_LPKegApyab3TT-k0jx88AIU4lIuck2LaEk_xweNAujRfH8E4HYB_Cw8Y0FleSef9FKwZg1aA94bulqOG3Z9I2TAE7wXom6v1-M9lazvgqxaPESUEClDx5KZJop7QzqZI4l3F-jc7Jp-jc6gTarRrs8jJ-I1rsCJkQgqqiBtMfJcKTUI5scCw%3D&attredirects=0';
+    $arr_replyData[] = new ImageMessageBuilder($picFullSize,$picThumbnail);
+                     
+    $placeName = "ที่ตั้งร้าน อร่อยดี coffeed cosmo เมืองทองธานี ";
+    $placeAddress = "ต.บางพูด อ.ปากเกร็ด จ.นนทบุรี ประเทศไทย";
+    $latitude = 13.9118964;
+    $longitude = 100.5499599;
+    $arr_replyData[] = new LocationMessageBuilder($placeName, $placeAddress, $latitude ,$longitude);        
+ 
+    $multiMessage =     new MultiMessageBuilder;
+    foreach($arr_replyData as $arr_Reply){
+            $multiMessage->add($arr_Reply);
+    }
+    $replyData = $multiMessage;     
+			
+			
 			// Build message to reply back
 			$messages = [
 				'type' => 'text',
@@ -66,7 +89,7 @@ if (!is_null($events['events'])) {
 			$url = 'https://api.line.me/v2/bot/message/reply';
 			$data = [
 				'replyToken' => $replyToken,
-				'messages' => [$messages],
+				'messages' => [$multiMessage],
 			];
 			$post = json_encode($data);
 			$headers = array('Content-Type: application/json', 'Authorization: Bearer ' . $access_token);
