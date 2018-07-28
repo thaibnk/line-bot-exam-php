@@ -45,16 +45,11 @@ $content = file_get_contents('php://input');
 // Parse JSON
 $events = json_decode($content, true);
 // Validate parsed JSON data
+
 if (!is_null($events['events'])) {
-	// Loop through each event
-	foreach ($events['events'] as $event) {
-		// Reply only when message sent is in 'text' format
-		if ($event['type'] == 'message' && $event['message']['type'] == 'text') {
-			// Get text sent
-			$userID = $event['source']['userId'];
-			// Get replyToken
-			$replyToken = $event['replyToken'];
-      
+ 			$userID = $event['source']['userId'];
+ 			$replyToken = $event['replyToken'];
+}     
 
 $channelSecret =  '5ee439e1f6308d8a4a660f944c2ce8e5';  
   // '75c03f392f6e53d662d6f5a8db9e421f';
