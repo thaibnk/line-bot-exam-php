@@ -57,8 +57,7 @@ if (!is_null($events['events'])) {
 			$replyToken = $event['replyToken'];
 
 			
- $
-arr_replyData = array();
+ $arr_replyData = array();
     $textReplyMessage = "ระบบ AI ตอบกลับคุณเป็นข้อความ";
     $arr_replyData[] = new TextMessageBuilder($textReplyMessage);
                      
@@ -89,7 +88,7 @@ arr_replyData = array();
 			$url = 'https://api.line.me/v2/bot/message/reply';
 			$data = [
 				'replyToken' => $replyToken,
-				'messages' => [$messages],
+				'messages' => [$multiMessage],
 			];
 			$post = json_encode($data);
 			$headers = array('Content-Type: application/json', 'Authorization: Bearer ' . $access_token);
