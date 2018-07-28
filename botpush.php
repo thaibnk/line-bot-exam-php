@@ -60,7 +60,7 @@ $textMessageBuilder = new \LINE\LINEBot\MessageBuilder\TextMessageBuilder('ส�
 //$response = $bot->pushMessage($pushID, $textMessageBuilder);
 
  $arr_replyData = array();
-    $textReplyMessage = "Bot ตอบกลับคุณเป็นข้อความ";
+    $textReplyMessage = "ระบบ AI ตอบกลับคุณเป็นข้อความ";
     $arr_replyData[] = new TextMessageBuilder($textReplyMessage);
                      
     $picFullSize = 'https://7698d940-a-62cb3a1a-s-sites.googlegroups.com/site/cosmocoffeed/nxng-khim/small_kim.png?attachauth=ANoY7crDxPRKu11N2TE5WLTL4XxsBPfa_V03kxBHijnv9ER8s6-JKHFPru7U0Xgb8Lsu5FHcJCq2GF7mfGSeGp5mhv76e3YXAjfbEY7km3ByK716ZoYZoGyK70TSS62-7JnGjxKaUG1ft1If7EbQ9DYUUw8jW8IQLuY4BgbDoy7WYGghopyI1QyTiJiFWNRqAcmXTnxLMfxRM7pHMLQqnjA1kRplF429S5WE7DjPd1i-NRcWH51sUQc%3D&attredirects=0';
@@ -69,8 +69,8 @@ $textMessageBuilder = new \LINE\LINEBot\MessageBuilder\TextMessageBuilder('ส�
                      
     $placeName = "ที่ตั้งร้าน อร่อยดี coffeed cosmo เมืองทองธานี ";
     $placeAddress = "ต.บางพูด อ.ปากเกร็ด จ.นนทบุรี ประเทศไทย";
-    $latitude = 13.780401863217657;
-    $longitude = 100.61141967773438;
+    $latitude = 13.9118964;
+    $longitude = 100.5499599;
     $arr_replyData[] = new LocationMessageBuilder($placeName, $placeAddress, $latitude ,$longitude);        
  
     $multiMessage =     new MultiMessageBuilder;
