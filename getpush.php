@@ -1,6 +1,7 @@
 <?php
 
 require "vendor/autoload.php";
+
 use LINE\LINEBot;
 use LINE\LINEBot\HTTPClient;
 use LINE\LINEBot\HTTPClient\CurlHTTPClient;
@@ -48,7 +49,7 @@ if ($_GET['userid']) {
     $pushID=$_GET['userid'];
 }
 else
-$pushID ='Ua53c53af718115e3453b75a6a564a761'; 
+{ $pushID ='Ua53c53af718115e3453b75a6a564a761';  }
 
   $userIds = array('Ua53c53af718115e3453b75a6a564a761','U1abe44912e42cc30622b90c918c304c5');
     //               ,'U3b8aee0375cf0918063385e5d1b88dfa','U188d6da54382f7bfa79551a5ec70d95e','U039d1e9327f1121f2e8ead2c852d0fd7');
