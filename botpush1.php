@@ -57,7 +57,7 @@ $httpClient = new \LINE\LINEBot\HTTPClient\CurlHTTPClient($access_token);
 $bot = new \LINE\LINEBot($httpClient, ['channelSecret' => $channelSecret]);
     
 $textMessageBuilder = new \LINE\LINEBot\MessageBuilder\TextMessageBuilder('สวัสดีจ๊ะ ร้านอาหารแนะนำวันนี้  CoffeeD  อร่อยดี ');
-//$response = $bot->pushMessage($pushID, $textMessageBuilder);
+
 
  $arr_replyData = array();
     $textReplyMessage = "ระบบ AI ตอบกลับคุณเป็นข้อความ";
@@ -78,7 +78,7 @@ $textMessageBuilder = new \LINE\LINEBot\MessageBuilder\TextMessageBuilder('ส�
             $multiMessage->add($arr_Reply);
     }
     $replyData = $multiMessage;            
-
+$response = $bot->pushMessage($pushID, $textMessageBuilder);
 //$response = $bot->multicast($userIds,$textMessageBuilder);
 $response = $bot->multicast($userIds,$replyData);
 
