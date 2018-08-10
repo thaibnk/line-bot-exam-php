@@ -1,7 +1,7 @@
 <?php
 
 $memcache = new Memcache;
-$memcache->connect('memcached-11878.c14.us-east-1-2.ec2.cloud.redislabs.com',11878) or die ("Could not connect");
+$memcache->connect('localhost',11878) or die ("Could not connect");
 
 $version = $memcache->getVersion();
 echo "Server's version: ".$version."<br/>\n";
