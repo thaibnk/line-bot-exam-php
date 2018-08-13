@@ -13,6 +13,7 @@ $m->set('object', new stdclass, time() + 300);
 var_dump($m->get('int'));
 var_dump($m->get('string'));
 var_dump($m->get('array'));
-var_dump($m->get('object'));phpinfo();
+var_dump($m->get('object'));
+//phpinfo();
 
 ?>
