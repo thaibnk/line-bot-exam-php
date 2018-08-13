@@ -1,13 +1,18 @@
 <?php
-$redis->set(';message';, ';Hello world';);
-$value = $redis->get('message');
+//$redis->set(';message';, ';Hello world';); $value = $redis->get('message'); // Hello world  print($value); 
 
-// Hello world
-print($value); 
+//echo ($redis->exists('message')) ? "Oui" : "please populate the message key";
 
-echo ($redis->exists('message')) ? "Oui" : "please populate the message key";
+$memtest = new Memcached();
+$memtest->addServer("127.0.0.1", 11211);
 
-//$memtest = new Memcached();$memtest->addServer("127.0.0.1", 11211);
-
+ 
+$response = $mem_var->get("Bilbo");
+if ($response) {
+&nbsp; &nbsp; echo $response;
+} else {
+&nbsp; &nbsp; echo "Adding Keys (K) for Values (V), You can then grab Value (V) for your Key (K) \m/ (-_-) \m/ ";
+&nbsp; &nbsp; $mem_var->set("Bilbo", "Here s Your (Ring) Master stored in MemCached (^_^)") or die(" Keys Couldn't be Created : Bilbo Not Found :'( ");
+}
 
 ?>
