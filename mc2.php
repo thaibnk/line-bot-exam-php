@@ -1,3 +1,4 @@
+<?php
 require 'vendor/autoload.php';
 
 // create a new persistent client
@@ -35,3 +36,4 @@ if (!$m->getServerList()) {
         $m->addServer($parts[0], $parts[1]);
     }
 }
+?>
