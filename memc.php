@@ -4,7 +4,7 @@
 //echo ($redis->exists('message')) ? "Oui" : "please populate the message key";
 
 $memtest = new Memcached();
-$memtest->addServer("127.0.0.1", 11211);
+$memtest->addServer("memcached-11878.c14.us-east-1-2.ec2.cloud.redislabs.com", 11878);
 
  
 $response = $mem_var->get("Bilbo");
