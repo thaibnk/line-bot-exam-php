@@ -1,4 +1,5 @@
 <?php
+error_reporting(E_ALL & ~E_NOTICE);
 
 $memcache = new Memcache;
 $memcache->connect('localhost',11211) or die ("Could not connect");
