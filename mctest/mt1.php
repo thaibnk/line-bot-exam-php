@@ -3,7 +3,7 @@ error_reporting(E_ALL & ~E_NOTICE);
 
 //error_reporting(E_ALL & ~E_NOTICE);
 
-$mc = new Memcached();
+$mc = new Memcached('memcached-app103432799');
 $mc->addServer("localhost", 11211);
 
 $mc->set("foo", "Hello!");
