@@ -26,3 +26,4 @@ switch ($_GET['a']) {
     echo '';
     break;
 }
+?>
