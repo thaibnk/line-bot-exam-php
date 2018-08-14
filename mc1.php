@@ -1,4 +1,5 @@
 <?php
+echo "สวัสดี";
 $mc = new Memcached();
 $mc->setOption(Memcached::OPT_BINARY_PROTOCOL, true);
 $mc->addServers(array_map(function($server) { return explode(':', $server, 2); }, explode(',', $_ENV['MEMCACHEDCLOUD_SERVERS'])));
@@ -25,4 +26,3 @@ switch ($_GET['a']) {
     echo '';
     break;
 }
-?>
