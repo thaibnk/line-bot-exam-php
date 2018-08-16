@@ -1,6 +1,6 @@
 {
     "require": {
         "linecorp/line-bot-sdk": "^2.3",
-         "ext-memcached": "*"
-    }
+  "predis/predis": "1.0.3",
+     }
 }
