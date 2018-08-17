@@ -1,6 +1,8 @@
 <?php
-echo "ทดสอบ redis <br>";
+
 $redis = new Predis\Client(getenv('REDIS_URL'));
+echo "ทดสอบ redis".getenv('REDIS_URL');
+
 //$redis->set(';message';, ';Hello world';);
 
 // gets the value of message
