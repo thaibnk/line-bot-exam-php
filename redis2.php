@@ -4,8 +4,9 @@ require "vendor/autoload.php";
 //  Plain Redis + phpredis
 // --------------------------------
 $redis = new Redis();
-$redis->connect('127.0.0.1');
+//$redis->connect('127.0.0.1');
 $cache = $redis->get('foo');
+echo $cache;
 //Cache miss
 if($cache === false) {
     ob_start(); // Start output buffering
