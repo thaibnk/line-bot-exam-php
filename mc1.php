@@ -1,5 +1,5 @@
 <?php
-echo "สวัสดี";
+echo "สวัสดี redis";
 
 // --------------------------------
 //  Plain Redis + phpredis
