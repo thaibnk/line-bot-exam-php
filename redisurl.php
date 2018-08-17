@@ -1,4 +1,5 @@
 <?php
+echo "ทดสอบ redis <br>";
 $redis = new Predis\Client(getenv('REDIS_URL'));
 $redis->set(';message';, ';Hello world';);
 
