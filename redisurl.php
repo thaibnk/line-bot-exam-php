@@ -6,6 +6,6 @@ $redis->set(';message';, ';Hello world';);
 $value = $redis->get('message');
 
 // Hello world
-print($value); 
+print('สวัสดี ='.$value); 
 
-echo ($redis->exists('message')) ? "Oui" : "please populate the message key";
+echo 'a='.($redis->exists('message')) ? "Oui" : "please populate the message key";
