@@ -4,7 +4,7 @@
 // --------------------------------
 $redis = new Redis();
 $redis->connect('127.0.0.1');
-$cache = $redis->get('key');
+$cache = $redis->get('foo');
 //Cache miss
 if($cache === false) {
     ob_start(); // Start output buffering
@@ -13,7 +13,7 @@ if($cache === false) {
     $redis->set('key',$cache);
 }
 // At this point $cache is either the retrieved cache or a fresh copy, so echo it
-echo $cache;
+echo "redis key=foo value=".$cache;
 // --------------------------------
 //  With Redis_OB_Func
 // --------------------------------
