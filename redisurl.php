@@ -4,7 +4,7 @@ require "vendor/autoload.php";
   //redis->connect("redis://h:p94a00b50a567eef4d65cb6230d498f1603ecdb5eac09324791a4c77f4a0a20f5@ec2-18-214-19-12.compute-1.amazonaws.com:15009, 6379); 
   // new RedisURI("redis://h:p94a00b50a567eef4d65cb6230d498f1603ecdb5eac09324791a4c77f4a0a20f5@ec2-18-214-19-12.compute-1.amazonaws.com:15009", 6379, 60, TimeUnit.SECONDS);
  
-echo "Connection to server sucessfully".$_ENV['REDIS_URL'];
+echo "Connection to server sucessfully".getenv('REDIS_URL');
  
 $redis new Redis();
 //$redis = new redis\Client($_ENV['REDIS_URL']);
