@@ -1,7 +1,8 @@
 <?php
-//$redis->set(';message';, ';Hello world';); $value = $redis->get('message'); // Hello world  print($value); 
 
-//echo ($redis->exists('message')) ? "Oui" : "please populate the message key";
+$redis->set(';message';, ';Hello world';); $value = $redis->get('message'); // Hello world  print($value); 
+
+echo ($redis->exists('message')) ? "Oui" : "please populate the message key";
 
 $memtest = new Memcached();
 $memtest->addServer("memcached-11878.c14.us-east-1-2.ec2.cloud.redislabs.com", 11878);
